@@ -1,5 +1,7 @@
 package com.xy.controller;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.xy.dao.GetSqlSession;
 import com.xy.entity.TempEntity;
 import com.xy.mapper.TempEntityMapper;
@@ -31,24 +33,20 @@ public class IndexController extends HttpServlet {
             Integer count = mapper.selectCount();
             log.info("总条数" + count);
 
+            PageHelper.startPage(1, 3);
             List<TempEntity> tempEntities = mapper.selectAll();
-
-//            PageHelper.startPage(1, 2);
-//            List<TempEntity> tempEntities = mapper.selectAll();
-//            PageInfo<TempEntity> pageInfo = new PageInfo<TempEntity>(tempEntities);
-//            pageInfo.getTotal();
-//            pageInfo.getList();
-
-            log.info(tempEntities.toString());
+            PageInfo<TempEntity> pageInfo = new PageInfo<>(tempEntities);
+            log.info("分页总条数" + pageInfo.getTotal());
+            log.info("分页数据" + pageInfo.getList());
 
             if (null != tempEntities) {
-                TempEntity tempEntity = tempEntities.get(count - 1);
+                TempEntity tempEntity = tempEntities.get(0);
                 tempEntity.setId(tempEntity.getId() + 1);
                 mapper.insert(tempEntity);
             }
         } catch (Exception e) {
             GetSqlSession.rollback();
-            log.error("index", e);
+            log.error("index异常", e);
         } finally {
             GetSqlSession.commit();
         }

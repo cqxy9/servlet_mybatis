@@ -15,7 +15,7 @@ public class GetSqlSession {
             sqlSession = GetSqlSessionFactory.getInstance().getSqlSessionFactory().openSession();
             tl.set(sqlSession);
         }
-        log.info("Get SqlSession hashCode : {}.", sqlSession.hashCode());
+        log.info("数据session hashCode : {}.", sqlSession.hashCode());
         return sqlSession;
     }
 
@@ -25,7 +25,7 @@ public class GetSqlSession {
             sqlSession.commit();
             sqlSession.close();
             tl.set(null);
-            log.info("SqlSession commit.");
+            log.info("数据commit");
         }
     }
 
@@ -35,7 +35,7 @@ public class GetSqlSession {
             sqlSession.rollback();
             sqlSession.close();
             tl.set(null);
-            log.info("SqlSession rollback.");
+            log.info("数据rollback");
         }
     }
 
@@ -44,7 +44,7 @@ public class GetSqlSession {
         if (null != sqlSession) {
             sqlSession.close();
             tl.set(null);
-            log.info("SqlSession close.");
+            log.info("获取数据流close");
         }
     }
 }

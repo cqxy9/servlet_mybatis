@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xy.mapper.EasyCodeTestMapper">
+
+    <resultMap type="com.xy.entity.EasyCodeTest" id="EasyCodeTestMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="abc" column="abc" jdbcType="VARCHAR"/>
+        <result property="qwe" column="qwe" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="EasyCodeTestMap">
+        select
+          id, abc, qwe
+        from main.easy_code_test
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="EasyCodeTestMap">
+        select
+          id, abc, qwe
+        from main.easy_code_test
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="EasyCodeTestMap">
+        select
+          id, abc, qwe
+        from main.easy_code_test
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="abc != null and abc != ''">
+                and abc = #{abc}
+            </if>
+            <if test="qwe != null and qwe != ''">
+                and qwe = #{qwe}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into main.easy_code_test(abc, qwe)
+        values (#{abc}, #{qwe})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update main.easy_code_test
+        <set>
+            <if test="abc != null and abc != ''">
+                abc = #{abc},
+            </if>
+            <if test="qwe != null and qwe != ''">
+                qwe = #{qwe},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from main.easy_code_test where id = #{id}
+    </delete>
+
+</mapper>
