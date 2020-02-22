@@ -16,6 +16,15 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
+/**
+  * Copyright 软件技术有限公司
+  * All rights reserved
+  *
+  * @Description:
+  *
+  * @Author: XY
+  * @Date: 2020/2/22
+  */
 @WebServlet("/index")
 public class IndexController extends HttpServlet {
     private static final Logger log = LoggerFactory.getLogger(IndexController.class);
@@ -32,7 +41,6 @@ public class IndexController extends HttpServlet {
             TempEntityMapper mapper = GetSqlSession.getSqlSession().getMapper(TempEntityMapper.class);
             Integer count = mapper.selectCount();
             log.info("总条数" + count);
-
             PageHelper.startPage(1, 3);
             List<TempEntity> tempEntities = mapper.selectAll();
             PageInfo<TempEntity> pageInfo = new PageInfo<>(tempEntities);

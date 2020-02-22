@@ -19,23 +19,10 @@
     <dependencies>
         <!-- log4j日志支持-日志文件管理包 -->
         <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>1.2.14</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>1.7.12</version>
-        </dependency>
-
-        <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
             <version>1.7.12</version>
         </dependency>
-        <!-- log end -->
 
         <!-- 格式化对象 -->
         <dependency>
@@ -56,13 +43,6 @@
             <groupId>com.github.pagehelper</groupId>
             <artifactId>pagehelper</artifactId>
             <version>5.1.10</version>
-        </dependency>
-
-        <!--引入mybatis的实体增删改查-->
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus</artifactId>
-            <version>3.3.1</version>
         </dependency>
 
         <!--mysql-->

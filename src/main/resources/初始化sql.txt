@@ -1,0 +1,22 @@
+create table temp
+(
+  id     integer(8) not null
+    primary key,
+  name   text(100),
+  abc_dd text(100)
+);
+
+create table sys_user
+(
+  id   INTEGER not null
+    primary key,
+  name TEXT
+);
+
+create table easy_code_test
+(
+  id  INTEGER not null
+    primary key,
+  abc TEXT,
+  qwe TEXT
+);

@@ -33,7 +33,6 @@ public class LoginController extends HttpServlet {
             easyCodeTest.setAbc("撒大大");
             easyCodeTest.setQwe("是的是的");
             easyCodeTestMapper.insert(easyCodeTest);
-
         } catch (Exception e) {
             log.error("login", e);
             GetSqlSession.rollback();

@@ -17,7 +17,6 @@ public class EasyCodeTest implements Serializable {
     
     private String qwe;
 
-
     public Integer getId() {
         return id;
     }
