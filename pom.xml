@@ -17,7 +17,7 @@
     </properties>
 
     <dependencies>
-        <!-- log4j日志支持-日志文件管理包 -->
+        <!-- log4j日志支持-日志文件管理包 1.7.30 -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
