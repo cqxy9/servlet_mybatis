@@ -8,6 +8,15 @@ import org.slf4j.LoggerFactory;
 
 import java.io.InputStream;
 
+/**
+  * Copyright 软件技术有限公司
+  * All rights reserved
+  *
+  * @Description:
+  *
+  * @Author: XY
+  * @Date: 2020/2/26
+  */
 public class GetSqlSessionFactory {
     private static final Logger log = LoggerFactory.getLogger(GetSqlSessionFactory.class);
     private SqlSessionFactory sqlSessionFactory;
@@ -29,7 +38,9 @@ public class GetSqlSessionFactory {
     }
 
     public SqlSessionFactory getSqlSessionFactory() throws Exception {
-        if (null == sqlSessionFactory) throw new Exception("sqlSessionFactory为空请检查配置。");
+        if (null == sqlSessionFactory){
+            throw new Exception("sqlSessionFactory为空请检查配置。");
+        }
         return sqlSessionFactory;
     }
 }

@@ -4,6 +4,15 @@ import org.apache.ibatis.session.SqlSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+  * Copyright 软件技术有限公司
+  * All rights reserved
+  *
+  * @Description:
+  *
+  * @Author: XY
+  * @Date: 2020/2/26
+  */
 public class GetSqlSession {
     private static final Logger log = LoggerFactory.getLogger(GetSqlSession.class);
 

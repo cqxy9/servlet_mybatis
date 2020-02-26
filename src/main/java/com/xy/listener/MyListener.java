@@ -7,6 +7,14 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
+/**
+ * Copyright 软件技术有限公司
+ * All rights reserved
+ *
+ * @Description:
+ * @Author: XY
+ * @Date: 2020/2/26
+ */
 @WebListener
 public class MyListener implements ServletContextListener {
     private static final Logger log = LoggerFactory.getLogger(MyListener.class);

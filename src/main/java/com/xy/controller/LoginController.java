@@ -13,6 +13,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+  * Copyright 软件技术有限公司
+  * All rights reserved
+  * 
+  * @Description: 
+  * 
+  * @Author: XY
+  * @Date: 2020/2/26
+  */
 @WebServlet("/login")
 public class LoginController extends HttpServlet {
     private static final Logger log = LoggerFactory.getLogger(LoginController.class);
